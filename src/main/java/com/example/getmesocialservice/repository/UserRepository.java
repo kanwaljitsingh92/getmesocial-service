@@ -1,15 +1,14 @@
 package com.example.getmesocialservice.repository;
 
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-import com.example.getmesocialservice.user.User;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-@Repository
-public class UserRepository {
+import com.example.getmesocialservice.model.User;
+
+public interface UserRepository extends MongoRepository<User,String> {
+
+	List<User> findByAddress(String address);
 	
-	public User getuser() {
-		User theuser = new User("kawal","canada",27,"http://profilepic");
-		return theuser;
-	}
 
 }

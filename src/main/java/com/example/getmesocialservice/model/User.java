@@ -1,19 +1,33 @@
-package com.example.getmesocialservice.user;
+package com.example.getmesocialservice.model;
+
+import org.springframework.data.annotation.Id;
 
 public class User {
 	
+	@Id
+	private String id;
 	private String name;
 	private String address;
 	private int age;
-	private String profilepicurl;
 	
-	public User(String name, String address, int age, String profilepicurl) {
-		super();
+	
+	public User(String name, String address, int age) {
 		this.name = name;
 		this.address = address;
 		this.age = age;
-		this.profilepicurl = profilepicurl;
+	
 	}
+	
+
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 
 	public String getName() {
 		return name;
@@ -37,14 +51,6 @@ public class User {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-
-	public String getProfilepicurl() {
-		return profilepicurl;
-	}
-
-	public void setProfilepicurl(String profilepicurl) {
-		this.profilepicurl = profilepicurl;
 	}
 	
 
