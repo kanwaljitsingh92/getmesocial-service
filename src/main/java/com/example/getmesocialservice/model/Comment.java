@@ -1,6 +1,9 @@
 package com.example.getmesocialservice.model;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.Id;
+
+import com.example.getmesocialservice.validation.Validcreatedby;
 
 public class Comment {
 	
@@ -8,9 +11,10 @@ public class Comment {
 	private String id;
 	
 	private String photoId;
-	
+	@Length(min=5)
 	private String message;
 	
+	@Validcreatedby
 	private String createdBy;
 	
 	private String dateCreated;

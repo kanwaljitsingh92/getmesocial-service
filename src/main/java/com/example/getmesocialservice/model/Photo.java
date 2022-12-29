@@ -2,6 +2,8 @@ package com.example.getmesocialservice.model;
 
 import org.springframework.data.annotation.Id;
 
+import com.example.getmesocialservice.validation.Validcreatedby;
+
 public class Photo {
 	
 	@Id
@@ -11,6 +13,7 @@ public class Photo {
 	
 	private String photourl;
 	
+	@Validcreatedby
 	private String createdby;
 	
 	private String dateCreated;

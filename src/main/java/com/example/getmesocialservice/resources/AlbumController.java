@@ -2,6 +2,8 @@ package com.example.getmesocialservice.resources;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +25,7 @@ public class AlbumController {
 	AlbumService thealbumservice;
 
 	@PostMapping
-	public Album savealbum(@RequestBody Album thealbum) {
+	public Album savealbum(@RequestBody @Valid Album thealbum) {
 		return thealbumservice.saveAlbum(thealbum);
 	}
 

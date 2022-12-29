@@ -2,6 +2,8 @@ package com.example.getmesocialservice.resources;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +25,7 @@ public class CommentController {
 	CommentService thecmntservice;
     
 	@PostMapping
-	public Comment saveComment(@RequestBody Comment thecomment) {
+	public Comment saveComment(@Valid @RequestBody Comment thecomment) {
 		return thecmntservice.saveComment(thecomment);
 	}
 	@GetMapping

@@ -1,6 +1,7 @@
 package com.example.getmesocialservice.userservice;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,12 +30,16 @@ public class UserService {
 	}
 
 	public void deleteuser(String userId) {
-		 userrepo.deleteById(userId);;
+		 userrepo.deleteById(userId);
 	
 }
 
-	public List<User> getbyname(String address) {
-		return userrepo.findByAddress(address);
+	public User getbyId(String id) {
+		return userrepo.findById(id).get();
 		
+	}
+
+	public List<User> getbyaddress(String address) {
+		return userrepo.findByAddress(address);
 	}
 }

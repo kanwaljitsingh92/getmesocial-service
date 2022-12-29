@@ -1,13 +1,23 @@
 package com.example.getmesocialservice.model;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.Id;
+
+import com.example.getmesocialservice.validation.ValidName;
 
 public class User {
 	
 	@Id
 	private String id;
+	@NotEmpty @ValidName
 	private String name;
+	@Length(max =10) @ValidName
 	private String address;
+	@Min(value=10) @Max(value=120)
 	private int age;
 	
 	
